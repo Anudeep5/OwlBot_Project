@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseURL } from "../assets/baseURL";
+import { baseURL } from "./baseURL";
 
 const getAuthHeaders = (token: string | null) => ({
     headers: {

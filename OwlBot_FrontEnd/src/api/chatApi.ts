@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseURL } from "../assets/baseURL";
+import { baseURL } from "./baseURL";
 
 export const sendChatMessage = async (user_input: string) => {
     const response = await axios.post(

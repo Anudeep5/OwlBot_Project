@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseURL } from "../assets/baseURL";
+import { baseURL } from "./baseURL";
 
 // Schedule Web Scraping API
 export const scheduleWebScraping = async (
