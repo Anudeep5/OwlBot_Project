@@ -23,6 +23,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+logging.getLogger("httpx").setLevel(logging.WARNING)
+
 # Load environment variables
 load_dotenv()
 
@@ -92,7 +94,7 @@ def get_faculty_links():
 
 
 def scrape_faculty_details(faculty_url, facultyName, facultySubj):
-    logger.info("Starting scrape_faculty_details for URL: %s", faculty_url)
+    # logger.info("Starting scrape_faculty_details for URL: %s", faculty_url)
     try:
         faculty_page = requests.get(faculty_url)
         faculty_soup = BeautifulSoup(faculty_page.text, "html.parser")
@@ -118,7 +120,7 @@ def scrape_faculty_details(faculty_url, facultyName, facultySubj):
             f"Courses Taught by {name} :\n{sentence if sentence else 'No courses available'}",
         ]
 
-        logger.info("Completed scrape_faculty_details for URL: %s", faculty_url)
+        # logger.info("Completed scrape_faculty_details for URL: %s", faculty_url)
         return [embedding_text, facultyName]
     except Exception as e:
         logger.error(
@@ -182,7 +184,7 @@ def setup_vector_database():
             response = []
             response.append(get_professor_info(faculty))
             rpmDictionary[faculty] = response
-            logger.info(f"Rate my professor fetched: {faculty}")
+            # logger.info(f"Rate my professor fetched: {faculty}")
             break
 
         for professor, details_list in rpmDictionary.items():
