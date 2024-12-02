@@ -33,7 +33,7 @@ SECRET_KEY = "django-insecure-3nf7wg*5m%t%1@=r=!b19=pq*71g&al5xkj$_gh0u*#3xt6fh8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["13.58.192.139"]
+ALLOWED_HOSTS = ["18.188.83.122"]
 
 
 # Application definition
@@ -66,6 +66,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://deployment-anudeep.d1y0334g365vcs.amplifyapp.com",  # Add your frontend URL here
+    "https://owlbot.net",
+    "https://www.owlbot.net",
 ]
 
 ROOT_URLCONF = "config.urls"
